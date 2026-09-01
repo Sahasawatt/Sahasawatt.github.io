@@ -26,6 +26,9 @@
   --color-accent-dim: oklch(62%   0.115 78);
   --color-accent-ink: oklch(16%   0.020 70);   /* text ON an accent fill */
   --color-focus:      oklch(85%   0.150 85);
+  /* a wash, not a fill: a solid accent selection reads as a block stamped over the type,
+     worst on the display sizes where the selection rect is a whole line box tall */
+  --color-selection:  oklch(80% 0.145 78 / 0.26);
 
   /* ---- bloom · the atmospheric ground, two warm radials ---- */
   --bloom-a: oklch(62% 0.15 62 / 0.20);

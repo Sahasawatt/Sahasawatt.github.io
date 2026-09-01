@@ -56,7 +56,8 @@ body::before {
     radial-gradient(48vw 42vw at 92% 22%,  var(--bloom-b), transparent 66%);
 }
 
-::selection { background: var(--color-accent); color: var(--color-accent-ink); }
+/* keep the selected text light and let the accent tint the ground behind it */
+::selection { background: var(--color-selection); color: var(--color-ink); }
 
 a { color: inherit; }
 
