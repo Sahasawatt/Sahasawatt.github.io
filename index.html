@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sahasawat Wittayaprasit — Full-Stack Software Engineer</title>
+<meta name="description" content="Full-stack software engineer in Bangkok. Payroll domain services on Go microservices behind React front-ends — 20+ enterprise tenants, roughly 20,000 pay slips a cycle. Also .NET C#, MySQL, and a self-built RAG platform.">
+<meta name="theme-color" content="#0d0c0b">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Sahasawat Wittayaprasit — Full-Stack Software Engineer">
+<meta property="og:description" content="Payroll domain services on Go microservices behind React front-ends — 20+ enterprise tenants, roughly 20,000 pay slips a cycle.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0c0b'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f5b642'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- N5 · Floating pill -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav__pill">
+    <a class="nav__link" href="#work">Work</a>
+    <a class="nav__link" href="#stack">Stack</a>
+    <a class="nav__link" href="#project">Project</a>
+    <a class="nav__link nav__link--cta" href="mailto:sahasawattee@gmail.com">Get in touch</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ─── marquee hero ───────────────────────────────────────────── -->
+  <section class="band hero">
+    <div class="shell">
+      <h1 class="hero__name reveal" style="--i:0">Sahasawat <br><b>Wittayaprasit</b></h1>
+
+      <div class="hero__meta reveal" style="--i:1">
+        <p class="label">Full-stack software engineer</p>
+        <p class="label">Bangkok, Thailand</p>
+        <p class="label">3+ years in production</p>
+      </div>
+
+      <div class="hero__grid">
+        <div class="reveal" style="--i:2">
+          <p class="lede">I like the problems that don&rsquo;t resolve on the first pass. The outage
+          further down started as one row that wouldn&rsquo;t save and ended at the execution plan
+          the database had picked — I stopped when it held across every tenant, not when it looked
+          fixed. The same pull is why I built a retrieval platform on my own time. Point me at the
+          part nobody has worked out yet.</p>
+          <p class="scroll-cue label"><i aria-hidden="true"></i> Scroll</p>
+        </div>
+
+        <div class="hero__figure reveal" style="--i:3">
+          <p class="hero__fig">20,<em>000</em></p>
+          <div class="spark">
+            <!-- one mark per 100 pay slips; the field is the number, drawn to scale -->
+            <svg viewBox="0 0 380 116" role="img" aria-label="A field of two hundred marks. Each mark represents one hundred pay slips, twenty thousand in total, cleared every pay cycle.">
+              <g class="dots" fill="currentColor">
+                <circle cx="8" cy="8" r="3.1" style="--c:0"/>
+                <circle cx="27" cy="8" r="3.1" style="--c:1"/>
+                <circle cx="46" cy="8" r="3.1" style="--c:2"/>
+                <circle cx="65" cy="8" r="3.1" style="--c:3"/>
+                <circle cx="84" cy="8" r="3.1" style="--c:4"/>
+                <circle cx="103" cy="8" r="3.1" style="--c:5"/>
+                <circle cx="122" cy="8" r="3.1" style="--c:6"/>
+                <circle cx="141" cy="8" r="3.1" style="--c:7"/>
+                <circle cx="160" cy="8" r="3.1" style="--c:8"/>
+                <circle cx="179" cy="8" r="3.1" style="--c:9"/>
+                <circle cx="198" cy="8" r="3.1" style="--c:10"/>
+                <circle cx="217" cy="8" r="3.1" style="--c:11"/>
+                <circle cx="236" cy="8" r="3.1" style="--c:12"/>
+                <circle cx="255" cy="8" r="3.1" style="--c:13"/>
+                <circle cx="274" cy="8" r="3.1" style="--c:14"/>
+                <circle cx="293" cy="8" r="3.1" style="--c:15"/>
+                <circle cx="312" cy="8" r="3.1" style="--c:16"/>
+                <circle cx="331" cy="8" r="3.1" style="--c:17"/>
+                <circle cx="350" cy="8" r="3.1" style="--c:18"/>
+                <circle cx="369" cy="8" r="3.1" style="--c:19"/>
+                <circle cx="8" cy="19" r="3.1" style="--c:1"/>
+                <circle cx="27" cy="19" r="3.1" style="--c:2"/>
+                <circle cx="46" cy="19" r="3.1" style="--c:3"/>
+                <circle cx="65" cy="19" r="3.1" style="--c:4"/>
+                <circle cx="84" cy="19" r="3.1" style="--c:5"/>
+                <circle cx="103" cy="19" r="3.1" style="--c:6"/>
+                <circle cx="122" cy="19" r="3.1" style="--c:7"/>
+                <circle cx="141" cy="19" r="3.1" style="--c:8"/>
+                <circle cx="160" cy="19" r="3.1" style="--c:9"/>
+                <circle cx="179" cy="19" r="3.1" style="--c:10"/>
+                <circle cx="198" cy="19" r="3.1" style="--c:11"/>
+                <circle cx="217" cy="19" r="3.1" style="--c:12"/>
+                <circle cx="236" cy="19" r="3.1" style="--c:13"/>
+                <circle cx="255" cy="19" r="3.1" style="--c:14"/>
+                <circle cx="274" cy="19" r="3.1" style="--c:15"/>
+                <circle cx="293" cy="19" r="3.1" style="--c:16"/>
+                <circle cx="312" cy="19" r="3.1" style="--c:17"/>
+                <circle cx="331" cy="19" r="3.1" style="--c:18"/>
+                <circle cx="350" cy="19" r="3.1" style="--c:19"/>
+                <circle cx="369" cy="19" r="3.1" style="--c:20"/>
+                <circle cx="8" cy="30" r="3.1" style="--c:2"/>
+                <circle cx="27" cy="30" r="3.1" style="--c:3"/>
+                <circle cx="46" cy="30" r="3.1" style="--c:4"/>
+                <circle cx="65" cy="30" r="3.1" style="--c:5"/>
+                <circle cx="84" cy="30" r="3.1" style="--c:6"/>
+                <circle cx="103" cy="30" r="3.1" style="--c:7"/>
+                <circle cx="122" cy="30" r="3.1" style="--c:8"/>
+                <circle cx="141" cy="30" r="3.1" style="--c:9"/>
+                <circle cx="160" cy="30" r="3.1" style="--c:10"/>
+                <circle cx="179" cy="30" r="3.1" style="--c:11"/>
+                <circle cx="198" cy="30" r="3.1" style="--c:12"/>
+                <circle cx="217" cy="30" r="3.1" style="--c:13"/>
+                <circle cx="236" cy="30" r="3.1" style="--c:14"/>
+                <circle cx="255" cy="30" r="3.1" style="--c:15"/>
+                <circle cx="274" cy="30" r="3.1" style="--c:16"/>
+                <circle cx="293" cy="30" r="3.1" style="--c:17"/>
+                <circle cx="312" cy="30" r="3.1" style="--c:18"/>
+                <circle cx="331" cy="30" r="3.1" style="--c:19"/>
+                <circle cx="350" cy="30" r="3.1" style="--c:20"/>
+                <circle cx="369" cy="30" r="3.1" style="--c:21"/>
+                <circle cx="8" cy="41" r="3.1" style="--c:3"/>
+                <circle cx="27" cy="41" r="3.1" style="--c:4"/>
+                <circle cx="46" cy="41" r="3.1" style="--c:5"/>
+                <circle cx="65" cy="41" r="3.1" style="--c:6"/>
+                <circle cx="84" cy="41" r="3.1" style="--c:7"/>
+                <circle cx="103" cy="41" r="3.1" style="--c:8"/>
+                <circle cx="122" cy="41" r="3.1" style="--c:9"/>
+                <circle cx="141" cy="41" r="3.1" style="--c:10"/>
+                <circle cx="160" cy="41" r="3.1" style="--c:11"/>
+                <circle cx="179" cy="41" r="3.1" style="--c:12"/>
+                <circle cx="198" cy="41" r="3.1" style="--c:13"/>
+                <circle cx="217" cy="41" r="3.1" style="--c:14"/>
+                <circle cx="236" cy="41" r="3.1" style="--c:15"/>
+                <circle cx="255" cy="41" r="3.1" style="--c:16"/>
+                <circle cx="274" cy="41" r="3.1" style="--c:17"/>
+                <circle cx="293" cy="41" r="3.1" style="--c:18"/>
+                <circle cx="312" cy="41" r="3.1" style="--c:19"/>
+                <circle cx="331" cy="41" r="3.1" style="--c:20"/>
+                <circle cx="350" cy="41" r="3.1" style="--c:21"/>
+                <circle cx="369" cy="41" r="3.1" style="--c:22"/>
+                <circle cx="8" cy="52" r="3.1" style="--c:4"/>
+                <circle cx="27" cy="52" r="3.1" style="--c:5"/>
+                <circle cx="46" cy="52" r="3.1" style="--c:6"/>
+                <circle cx="65" cy="52" r="3.1" style="--c:7"/>
+                <circle cx="84" cy="52" r="3.1" style="--c:8"/>
+                <circle cx="103" cy="52" r="3.1" style="--c:9"/>
+                <circle cx="122" cy="52" r="3.1" style="--c:10"/>
+                <circle cx="141" cy="52" r="3.1" style="--c:11"/>
+                <circle cx="160" cy="52" r="3.1" style="--c:12"/>
+                <circle cx="179" cy="52" r="3.1" style="--c:13"/>
+                <circle cx="198" cy="52" r="3.1" style="--c:14"/>
+                <circle cx="217" cy="52" r="3.1" style="--c:15"/>
+                <circle cx="236" cy="52" r="3.1" style="--c:16"/>
+                <circle cx="255" cy="52" r="3.1" style="--c:17"/>
+                <circle cx="274" cy="52" r="3.1" style="--c:18"/>
+                <circle cx="293" cy="52" r="3.1" style="--c:19"/>
+                <circle cx="312" cy="52" r="3.1" style="--c:20"/>
+                <circle cx="331" cy="52" r="3.1" style="--c:21"/>
+                <circle cx="350" cy="52" r="3.1" style="--c:22"/>
+                <circle cx="369" cy="52" r="3.1" style="--c:23"/>
+                <circle cx="8" cy="63" r="3.1" style="--c:5"/>
+                <circle cx="27" cy="63" r="3.1" style="--c:6"/>
+                <circle cx="46" cy="63" r="3.1" style="--c:7"/>
+                <circle cx="65" cy="63" r="3.1" style="--c:8"/>
+                <circle cx="84" cy="63" r="3.1" style="--c:9"/>
+                <circle cx="103" cy="63" r="3.1" style="--c:10"/>
+                <circle cx="122" cy="63" r="3.1" style="--c:11"/>
+                <circle cx="141" cy="63" r="3.1" style="--c:12"/>
+                <circle cx="160" cy="63" r="3.1" style="--c:13"/>
+                <circle cx="179" cy="63" r="3.1" style="--c:14"/>
+                <circle cx="198" cy="63" r="3.1" style="--c:15"/>
+                <circle cx="217" cy="63" r="3.1" style="--c:16"/>
+                <circle cx="236" cy="63" r="3.1" style="--c:17"/>
+                <circle cx="255" cy="63" r="3.1" style="--c:18"/>
+                <circle cx="274" cy="63" r="3.1" style="--c:19"/>
+                <circle cx="293" cy="63" r="3.1" style="--c:20"/>
+                <circle cx="312" cy="63" r="3.1" style="--c:21"/>
+                <circle cx="331" cy="63" r="3.1" style="--c:22"/>
+                <circle cx="350" cy="63" r="3.1" style="--c:23"/>
+                <circle cx="369" cy="63" r="3.1" style="--c:24"/>
+                <circle cx="8" cy="74" r="3.1" style="--c:6"/>
+                <circle cx="27" cy="74" r="3.1" style="--c:7"/>
+                <circle cx="46" cy="74" r="3.1" style="--c:8"/>
+                <circle cx="65" cy="74" r="3.1" style="--c:9"/>
+                <circle cx="84" cy="74" r="3.1" style="--c:10"/>
+                <circle cx="103" cy="74" r="3.1" style="--c:11"/>
+                <circle cx="122" cy="74" r="3.1" style="--c:12"/>
+                <circle cx="141" cy="74" r="3.1" style="--c:13"/>
+                <circle cx="160" cy="74" r="3.1" style="--c:14"/>
+                <circle cx="179" cy="74" r="3.1" style="--c:15"/>
+                <circle cx="198" cy="74" r="3.1" style="--c:16"/>
+                <circle cx="217" cy="74" r="3.1" style="--c:17"/>
+                <circle cx="236" cy="74" r="3.1" style="--c:18"/>
+                <circle cx="255" cy="74" r="3.1" style="--c:19"/>
+                <circle cx="274" cy="74" r="3.1" style="--c:20"/>
+                <circle cx="293" cy="74" r="3.1" style="--c:21"/>
+                <circle cx="312" cy="74" r="3.1" style="--c:22"/>
+                <circle cx="331" cy="74" r="3.1" style="--c:23"/>
+                <circle cx="350" cy="74" r="3.1" style="--c:24"/>
+                <circle cx="369" cy="74" r="3.1" style="--c:25"/>
+                <circle cx="8" cy="85" r="3.1" style="--c:7"/>
+                <circle cx="27" cy="85" r="3.1" style="--c:8"/>
+                <circle cx="46" cy="85" r="3.1" style="--c:9"/>
+                <circle cx="65" cy="85" r="3.1" style="--c:10"/>
+                <circle cx="84" cy="85" r="3.1" style="--c:11"/>
+                <circle cx="103" cy="85" r="3.1" style="--c:12"/>
+                <circle cx="122" cy="85" r="3.1" style="--c:13"/>
+                <circle cx="141" cy="85" r="3.1" style="--c:14"/>
+                <circle cx="160" cy="85" r="3.1" style="--c:15"/>
+                <circle cx="179" cy="85" r="3.1" style="--c:16"/>
+                <circle cx="198" cy="85" r="3.1" style="--c:17"/>
+                <circle cx="217" cy="85" r="3.1" style="--c:18"/>
+                <circle cx="236" cy="85" r="3.1" style="--c:19"/>
+                <circle cx="255" cy="85" r="3.1" style="--c:20"/>
+                <circle cx="274" cy="85" r="3.1" style="--c:21"/>
+                <circle cx="293" cy="85" r="3.1" style="--c:22"/>
+                <circle cx="312" cy="85" r="3.1" style="--c:23"/>
+                <circle cx="331" cy="85" r="3.1" style="--c:24"/>
+                <circle cx="350" cy="85" r="3.1" style="--c:25"/>
+                <circle cx="369" cy="85" r="3.1" style="--c:26"/>
+                <circle cx="8" cy="96" r="3.1" style="--c:8"/>
+                <circle cx="27" cy="96" r="3.1" style="--c:9"/>
+                <circle cx="46" cy="96" r="3.1" style="--c:10"/>
+                <circle cx="65" cy="96" r="3.1" style="--c:11"/>
+                <circle cx="84" cy="96" r="3.1" style="--c:12"/>
+                <circle cx="103" cy="96" r="3.1" style="--c:13"/>
+                <circle cx="122" cy="96" r="3.1" style="--c:14"/>
+                <circle cx="141" cy="96" r="3.1" style="--c:15"/>
+                <circle cx="160" cy="96" r="3.1" style="--c:16"/>
+                <circle cx="179" cy="96" r="3.1" style="--c:17"/>
+                <circle cx="198" cy="96" r="3.1" style="--c:18"/>
+                <circle cx="217" cy="96" r="3.1" style="--c:19"/>
+                <circle cx="236" cy="96" r="3.1" style="--c:20"/>
+                <circle cx="255" cy="96" r="3.1" style="--c:21"/>
+                <circle cx="274" cy="96" r="3.1" style="--c:22"/>
+                <circle cx="293" cy="96" r="3.1" style="--c:23"/>
+                <circle cx="312" cy="96" r="3.1" style="--c:24"/>
+                <circle cx="331" cy="96" r="3.1" style="--c:25"/>
+                <circle cx="350" cy="96" r="3.1" style="--c:26"/>
+                <circle cx="369" cy="96" r="3.1" style="--c:27"/>
+                <circle cx="8" cy="107" r="3.1" style="--c:9"/>
+                <circle cx="27" cy="107" r="3.1" style="--c:10"/>
+                <circle cx="46" cy="107" r="3.1" style="--c:11"/>
+                <circle cx="65" cy="107" r="3.1" style="--c:12"/>
+                <circle cx="84" cy="107" r="3.1" style="--c:13"/>
+                <circle cx="103" cy="107" r="3.1" style="--c:14"/>
+                <circle cx="122" cy="107" r="3.1" style="--c:15"/>
+                <circle cx="141" cy="107" r="3.1" style="--c:16"/>
+                <circle cx="160" cy="107" r="3.1" style="--c:17"/>
+                <circle cx="179" cy="107" r="3.1" style="--c:18"/>
+                <circle cx="198" cy="107" r="3.1" style="--c:19"/>
+                <circle cx="217" cy="107" r="3.1" style="--c:20"/>
+                <circle cx="236" cy="107" r="3.1" style="--c:21"/>
+                <circle cx="255" cy="107" r="3.1" style="--c:22"/>
+                <circle cx="274" cy="107" r="3.1" style="--c:23"/>
+                <circle cx="293" cy="107" r="3.1" style="--c:24"/>
+                <circle cx="312" cy="107" r="3.1" style="--c:25"/>
+                <circle cx="331" cy="107" r="3.1" style="--c:26"/>
+                <circle cx="350" cy="107" r="3.1" style="--c:27"/>
+                <circle cx="369" cy="107" r="3.1" style="--c:28"/>
+              </g>
+            </svg>
+            <p class="spark__caption label">
+              <span>Each mark = 100 pay slips</span>
+              <span>Per pay cycle</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── proof strip ────────────────────────────────────────────── -->
+  <section class="band band--tight" aria-label="Scope">
+    <div class="shell">
+      <div class="stats">
+        <div class="stat reveal" style="--i:0"><b>20+</b><span class="label">Enterprise tenants</span></div>
+        <div class="stat reveal" style="--i:1"><b>2</b><span class="label">Countries&rsquo; payroll statute</span></div>
+        <div class="stat reveal" style="--i:2"><b>2</b><span class="label">Product generations</span></div>
+        <div class="stat reveal" style="--i:3"><b>3+</b><span class="label">Years shipping</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── the outage ─────────────────────────────────────────────── -->
+  <section class="band" id="work">
+    <div class="shell">
+      <div class="card card--lift feature reveal">
+        <div class="feature__split">
+          <div>
+            <p class="label">Production incident · Humanica</p>
+            <h2 class="feature__quote">The outage traced to one row. The fix was in the plan.</h2>
+          </div>
+          <div class="feature__body">
+            <p>A production database outage traced back to a single-row save. SQL Server chose a
+            different execution plan for the query the C# application issued than for the identical
+            query run directly against MSSQL.</p>
+            <p>I rewrote the stored procedure so the plan stayed stable. That ended the outage —
+            and it held across every client tenant.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── experience ─────────────────────────────────────────────── -->
+  <section class="band" aria-label="Experience">
+    <div class="shell">
+      <div class="section-head reveal">
+        <h2 class="display">Three years, three companies, one habit: own the thing end to end.</h2>
+      </div>
+
+      <div class="roles">
+
+        <article class="card card--lift reveal" style="--i:0">
+          <div class="role__top">
+            <p class="role__org">Humanica Public Company</p>
+            <p class="label">Consultant Developer · Jan 2025 — Present</p>
+          </div>
+          <p class="role__narr">I own the payroll domain services on the Workplaze platform — Go
+          microservices behind React.js front-ends — running for <b>20+ enterprise tenants</b> and
+          roughly <b>20,000 pay slips per pay cycle</b>. I took the engine from single-country to
+          multi-country by adding Vietnam PIT and social-insurance calculation, plus bilingual
+          EN&nbsp;/&nbsp;VN pay slips, through the same calculation pipeline rather than forking per
+          country. It is live with Vietnamese clients.</p>
+          <p class="role__narr">Per-client pay-slip layouts became one config-driven template:
+          resource-key i18n resolved from the database, per-client section toggles. A new language
+          or a layout change now ships as configuration instead of a code release. I built
+          bank-transfer file generation on the Go platform — a bank-specific fixed-width format per
+          bank in the client requirement, emitted straight from payroll output — which drives
+          automated salary disbursement to Thai banks, and designed the module&rsquo;s audit-logging
+          component (actor, API and menu captured per action) as a reusable base other feature
+          owners extend.</p>
+          <p class="role__narr">I translate product requirements into technical designs and lead the
+          design review before implementation, and ship across <b>two product generations</b> —
+          legacy Humatrix (ASP.NET&nbsp;C#) and Workplaze (Go&nbsp;/&nbsp;React).</p>
+          <p class="tags"><span>Golang</span><span>React.js</span><span>Microservices</span><span>SQL Server</span><span>ASP.NET C#</span><span>Payroll statute</span></p>
+        </article>
+
+        <article class="card card--lift reveal" style="--i:1">
+          <div class="role__top">
+            <p class="role__org">Indigy Co., Ltd.</p>
+            <p class="label">Full-Stack Developer · Dec 2023 — Aug 2024</p>
+          </div>
+
+          <div class="subproject">
+            <p><span class="subproject__name">PTT OR &ldquo;Thaidet&rdquo; Marketplace</span> — e-commerce platform</p>
+            <p class="role__narr">I designed the MySQL schema and REST API contracts for
+            buyer&nbsp;/&nbsp;seller account management and implemented them as .NET C# services,
+            then built the order-notification pipeline on Hangfire background jobs so SMS and email
+            dispatch off the request path — a notification failure never blocks order placement. I
+            owned the QR payment-gateway integration end to end: payment request, payment-slip
+            generation, and slip verification against the recorded transaction. Category and
+            promotion management with Excel reporting went to the admin back office, and I ran
+            SonarQube static analysis as a pre-release gate.</p>
+          </div>
+
+          <div class="subproject">
+            <p><span class="subproject__name">Kohler LINE OA &amp; Admin Website</span> — warranty and after-sales</p>
+            <p class="role__narr">I modelled the warranty domain as an ER design — registration →
+            service purchase → admin verification — and implemented the workflow across
+            .NET&nbsp;C#&nbsp;/&nbsp;MVC APIs on MySQL. I integrated the 2C2P payment gateway and the
+            document pipeline that generates warranty certificates and quotations, delivered to
+            customers through the LINE Official Account, and authored the SQL deployment scripts,
+            handling database restoration during a third-party penetration test.</p>
+          </div>
+
+          <p class="tags"><span>.NET C#</span><span>MySQL</span><span>Hangfire</span><span>2C2P</span><span>LINE OA</span><span>SonarQube</span></p>
+        </article>
+
+        <article class="card card--lift reveal" style="--i:2">
+          <div class="role__top">
+            <p class="role__org">Denfah Printing (Thailand) Co., Ltd.</p>
+            <p class="label">Programmer · Aug 2023 — Nov 2023</p>
+          </div>
+          <p class="role__narr">I developed internal line-of-business applications in Node.js
+          (Atlux framework) for print-production operations, and automated manual back-office
+          workflows with scripted tooling — Excel macros and Google Apps Script — removing hand-run
+          spreadsheet steps from the daily process.</p>
+          <p class="tags"><span>Node.js</span><span>Atlux</span><span>Apps Script</span></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── stack ──────────────────────────────────────────────────── -->
+  <section class="band" id="stack">
+    <div class="shell">
+      <div class="section-head reveal">
+        <h2 class="display">What I reach for.</h2>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-cell reveal" style="--i:0">
+          <p class="label">Backend</p>
+          <p>Golang · Node.js · .NET C# · ASP.NET Core&nbsp;/&nbsp;MVC · REST API design · Microservices</p>
+        </div>
+        <div class="stack-cell reveal" style="--i:1">
+          <p class="label">Frontend</p>
+          <p>React.js · Angular · TypeScript · JavaScript · HTML5&nbsp;/&nbsp;CSS · Responsive UI</p>
+        </div>
+        <div class="stack-cell reveal" style="--i:2">
+          <p class="label">Data</p>
+          <p>SQL Server (MSSQL) · MySQL · PostgreSQL · Redis · Schema&nbsp;/&nbsp;ER design</p>
+        </div>
+        <div class="stack-cell reveal" style="--i:3">
+          <p class="label">AI / LLM</p>
+          <p>Python · RAG · Embeddings &amp; vector DB (pgvector) · LLM evaluation · Prompt engineering</p>
+        </div>
+        <div class="stack-cell reveal" style="--i:4">
+          <p class="label">Cloud &amp; DevOps</p>
+          <p>Docker · CI&nbsp;/&nbsp;CD pipelines · Git</p>
+        </div>
+        <div class="stack-cell reveal" style="--i:5">
+          <p class="label">Practices</p>
+          <p>Agile&nbsp;/&nbsp;Scrum · Code review · SonarQube · API design · Database design</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── personal work ──────────────────────────────────────────── -->
+  <section class="band" id="project">
+    <div class="shell">
+      <div class="section-head reveal">
+        <h2 class="display">learning-agent-rag — a RAG platform I built to grade itself.</h2>
+      </div>
+      <div class="card card--lift reveal">
+        <p class="label">Python · FastAPI · pgvector&nbsp;/&nbsp;ChromaDB · LLM APIs · Docker</p>
+        <p class="role__narr" style="margin-block-start: var(--space-md)">A retrieval-augmented
+        generation platform built end to end — ingestion, chunking, embeddings, vector store,
+        retrieval and LLM synthesis — served via FastAPI and containerised with Docker. The part I
+        care most about is the evaluation harness: <b>hit@k, MRR, recall</b> and LLM-as-judge
+        faithfulness scoring, run as stratified, CI-style regression checks, so a change to the
+        retrieval stack has to prove itself before it lands.</p>
+        <p class="role__narr">On top of that sit safety guardrails — prompt-injection scanning, PII
+        data-fencing, low-confidence abstention — and observability: tracing, token and latency
+        telemetry, model routing. The agentic surface covers tool&nbsp;/&nbsp;function calling,
+        hybrid search, reranking, tenant access-control scoping, and semantic caching.</p>
+        <p class="tags"><span>Python</span><span>FastAPI</span><span>pgvector</span><span>Evaluation</span><span>Guardrails</span><span>Docker</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── education ──────────────────────────────────────────────── -->
+  <section class="band band--tight" aria-label="Education and languages">
+    <div class="shell">
+      <div class="stack-grid">
+        <div class="stack-cell reveal" style="--i:0">
+          <p class="label">Education</p>
+          <p>Bachelor of Computer Science, 2022<br>Southeast Asia University, Bangkok</p>
+        </div>
+        <div class="stack-cell reveal" style="--i:1">
+          <p class="label">Languages</p>
+          <p>Thai — native<br>English — professional reading&nbsp;/&nbsp;technical</p>
+        </div>
+        <div class="stack-cell reveal" style="--i:2">
+          <p class="label">Elsewhere</p>
+          <a class="link" href="https://github.com/Sahasawatt" rel="me">github.com/Sahasawatt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Ft5 · Statement -->
+<footer class="band foot">
+  <div class="shell">
+    <p class="foot__line reveal">Payroll runs on the days nobody notices. That is the job.</p>
+    <a class="cta reveal" href="mailto:sahasawattee@gmail.com">sahasawattee@gmail.com &rarr;</a>
+    <div class="foot__meta">
+      <p class="label">Sahasawat Wittayaprasit · Bangkok, Thailand</p>
+      <p class="label">Static page · No framework · No analytics</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* The hidden state is opt-in and every path out of it is guarded. A resume that renders
+   blank because one event did not fire is worse than a resume with no animation at all,
+   so: reveal what is already on screen synchronously, observe the rest, and keep a timer
+   that reveals everything regardless. Any throw un-sets .js and the CSS shows all of it. */
+(function () {
+  var root = document.documentElement;
+  try {
+    var els = [].slice.call(document.querySelectorAll('.reveal'));
+    if (!els.length) return;
+
+    function show(el) { el.classList.add('is-revealed'); }
+    function showAll() { els.forEach(show); }
+
+    root.classList.add('js');
+
+    // 1. anything already within the viewport reveals now, without waiting for a callback
+    els.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < (window.innerHeight || 0) && r.bottom > 0) show(el);
+    });
+
+    // 2. the rest reveal as they scroll in
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          show(e.target);
+          io.unobserve(e.target);
+        });
+      }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
+      els.forEach(function (el) { if (!el.classList.contains('is-revealed')) io.observe(el); });
+    } else {
+      showAll();
+    }
+
+    // 3. backstop: whatever happened above, nothing stays hidden past this point
+    setTimeout(showAll, 2500);
+  } catch (err) {
+    root.classList.remove('js');   // CSS default is fully visible
+  }
+})();
+</script>
+
+</body>
+</html>

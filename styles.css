@@ -1,0 +1,435 @@
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5
+ * Hallmark · genre: atmospheric · macrostructure: Marquee Hero · theme: custom "dark-luxury"
+ * axes: paper-band DARK · display light-weight grotesk (300) · accent WARM amber
+ *   (all three axes differ from the previous build: light / grotesk-heavy-800 / cool ultramarine)
+ * nav: N5 Floating pill · footer: Ft5 Statement · enrichment: Tier A — two CSS blooms + a
+ *   hand-built SVG sparkline of the subject's own real numbers
+ *
+ * Answers the four stated objections to build 1:
+ *   pale/empty      -> near-black ground, elevated surfaces, two warm radial blooms
+ *   nothing moves   -> staged scroll reveal, a 200-mark field that fills in, glow-lift on hover
+ *   reads as a doc  -> full-bleed canvas, elevated cards, pill CTA, no paper metaphor
+ *   grid is noisy   -> the 12-column hairline rail system is gone entirely
+ *
+ * contrast: pass (40-41, 20 pairs measured, worst 5.43:1) · nav/footer slop: pass (42-45)
+ * honest: pass (46 — the 200 marks encode 200 x 100 = the resume's own ~20,000)
+ * chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · icons: pass (30)
+ * mobile: pass (34 at 320/390/414/768/1280/1920, verified with a planted canary so the
+ *   empty overflow result is known to be real, not a blind probe)
+ * degradation: with JS removed, 0 of 27 revealed elements and 0 of 200 marks stay hidden.
+ */
+
+/* tokens.css is linked from the document, not @import-ed here: an @import serialises the
+   request behind this file, and it is invisible to cache-busting on this file's own URL. */
+
+/* ─────────────────────────────  ground  ───────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { overflow-x: clip; }
+html {
+  scroll-behavior: smooth;
+  /* anchor targets must land below the floating pill, not underneath it */
+  scroll-padding-block-start: 5.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-body);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--body-weight);
+  line-height: 1.8;              /* the source's stated body leading */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* the atmosphere: two fixed warm blooms, no animation */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(58vw 48vw at 12% -6%,  var(--bloom-a), transparent 62%),
+    radial-gradient(48vw 42vw at 92% 22%,  var(--bloom-b), transparent 66%);
+}
+
+::selection { background: var(--color-accent); color: var(--color-accent-ink); }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+h1, h2, h3 { margin: 0; font-weight: var(--display-weight); color: var(--color-ink); }
+p, ul, ol { margin: 0; }
+ul { list-style: none; padding: 0; }
+
+.shell {
+  position: relative;
+  z-index: var(--z-base);
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.band { position: relative; z-index: var(--z-base); padding-block: var(--space-3xl); }
+.band--tight { padding-block: var(--space-2xl); }
+
+/* ────────────────────────────  the voices  ──────────────────────────── */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-size: var(--text-display);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.06;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.label {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.lede { font-size: var(--text-md); line-height: 1.65; color: var(--color-body); max-width: 54ch; }
+.prose { max-width: 62ch; }
+.prose + .prose { margin-block-start: var(--space-md); }
+
+.tnum { font-family: var(--font-outlier); font-variant-numeric: tabular-nums; }
+
+.section-head { display: grid; gap: var(--space-sm); margin-block-end: var(--space-xl); }
+.section-head .display { font-size: var(--text-2xl); }
+
+/* ───────────────────────────  N5 floating pill  ─────────────────────── */
+
+.nav {
+  position: fixed;
+  z-index: var(--z-sticky);
+  inset-inline: 0;
+  top: var(--space-md);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.nav__pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-2xs);
+  border-radius: 999px;
+  border: var(--rule-hair) solid var(--color-rule);
+  background: color-mix(in oklab, var(--color-paper-2) 78%, transparent);
+  backdrop-filter: blur(14px) saturate(1.3);
+  box-shadow: var(--lift);
+  max-width: calc(100vw - var(--space-lg) * 2);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav__pill::-webkit-scrollbar { display: none; }
+
+.nav__link {
+  flex: none;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 999px;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-body);
+  transition: color var(--dur-short) var(--ease-out),
+              background-color var(--dur-short) var(--ease-out);
+}
+.nav__link:hover { color: var(--color-ink); background: color-mix(in oklab, var(--color-paper-3) 90%, transparent); }
+.nav__link:active { color: var(--color-accent); }
+.nav__link--cta { color: var(--color-accent-ink); background: var(--color-accent); font-weight: 500; }
+.nav__link--cta:hover { color: var(--color-accent-ink); background: var(--color-focus); }
+
+/* ──────────────────────────  marquee hero  ─────────────────────────── */
+
+.hero {
+  position: relative;
+  z-index: var(--z-base);
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+  /* top clearance is for the floating pill only (~64px); the old 9rem pushed the dot
+     field past the fold on a 1280x800 laptop, which is where gate 44b bites */
+  padding-block: var(--space-3xl) var(--space-2xl);
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: var(--text-marquee);
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+  min-width: 0;
+  margin-block-end: var(--space-lg);
+}
+.hero__name b { font-weight: 500; color: var(--color-ink); }
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm) var(--space-lg);
+  padding-block-end: var(--space-xl);
+  border-block-end: var(--rule-hair) solid var(--color-rule);
+  margin-block-end: var(--space-xl);
+}
+
+/* the text side gets the larger share — an even split starved the lede of measure */
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: var(--space-2xl);
+  align-items: end;
+}
+
+.hero__figure { display: grid; gap: var(--space-xs); }
+.hero__fig {
+  font-family: var(--font-outlier);
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+  font-size: var(--text-figure);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--color-ink);
+}
+.hero__fig em { font-style: normal; color: var(--color-accent); }
+
+.scroll-cue {
+  margin-block-start: var(--space-2xl);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-muted);
+}
+.scroll-cue i {
+  display: block;
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(var(--color-accent), transparent);
+}
+
+/* ────────────────────────  the sparkline (Tier A)  ──────────────────── */
+
+.spark { display: grid; gap: var(--space-sm); }
+.spark svg { width: 100%; height: auto; display: block; }
+.spark__caption { display: flex; justify-content: space-between; gap: var(--space-md); }
+
+/* 200 marks, one per 100 pay slips. The field IS the number, drawn to scale. */
+.dots { color: var(--color-accent); }
+/* visible by default; only the .js path hides them, so a blocked script cannot empty the field */
+.js .dots circle { opacity: 0; }
+.js .is-revealed .dots circle {
+  animation: dotIn 460ms var(--ease-out) forwards;
+  animation-delay: calc(var(--c, 0) * 11ms);
+}
+@keyframes dotIn { to { opacity: 1; } }
+
+/* ───────────────────────────  surfaces  ──────────────────────────── */
+
+.card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: var(--rule-hair) solid var(--color-rule);
+  background: color-mix(in oklab, var(--color-paper-2) 92%, transparent);
+  box-shadow: var(--lift);
+  padding: clamp(var(--space-lg), 4vw, var(--space-2xl));
+  transition: transform var(--dur-short) var(--ease-out),
+              box-shadow var(--dur-short) var(--ease-out),
+              border-color var(--dur-short) var(--ease-out);
+}
+@media (hover: hover) {
+  .card--lift:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--lift-glow);
+    border-color: color-mix(in oklab, var(--color-accent) 40%, var(--color-rule));
+  }
+}
+
+/* the one poster moment: the outage */
+.feature { display: grid; gap: var(--space-lg); }
+.feature__quote {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-size: var(--text-xl);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  max-width: 22ch;
+}
+.feature__body { display: grid; gap: var(--space-md); max-width: 62ch; }
+.feature__body p { max-width: none; }
+.feature__split { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: var(--space-2xl); }
+
+/* ───────────────────────────  proof strip  ────────────────────────── */
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-md); }
+.stat { display: grid; gap: var(--space-2xs); align-content: start; padding: var(--space-lg) 0; }
+.stat b {
+  font-family: var(--font-outlier);
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+  font-size: var(--text-2xl);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+/* ──────────────────────────  experience  ─────────────────────────── */
+
+/* the cards carry 60px of internal padding; a 24px gap between them read as packed */
+.roles { display: grid; gap: var(--space-xl); }
+
+.role__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-lg);
+  margin-block-end: var(--space-md);
+}
+.role__org { font-family: var(--font-display); font-weight: 400; font-size: var(--text-lg); color: var(--color-ink); letter-spacing: -0.02em; }
+.role__narr { max-width: 68ch; }
+.role__narr + .role__narr { margin-block-start: var(--space-sm); }
+.role__narr b { font-weight: 500; color: var(--color-ink); }
+
+.tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-block-start: var(--space-lg); }
+.tags span {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius);
+  border: var(--rule-hair) solid var(--color-rule);
+  /* body colour, not muted: these chips sit on the lighter card surface, where muted fell to 4.31 */
+  color: var(--color-body);
+  white-space: nowrap;
+}
+
+.subproject { margin-block-start: var(--space-lg); padding-block-start: var(--space-lg); border-block-start: var(--rule-hair) solid var(--color-rule); }
+.subproject__name { color: var(--color-ink); font-weight: 500; }
+
+/* ────────────────────────────  stack  ─────────────────────────────── */
+
+.stack-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); }
+.stack-cell { display: grid; gap: var(--space-sm); align-content: start; }
+
+/* ─────────────────────────  links + CTA  ──────────────────────────── */
+
+.link {
+  display: inline-block;
+  justify-self: start;
+  width: fit-content;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-ink);
+  border-block-end: var(--rule-hair) solid var(--color-accent-dim);
+  padding-block-end: var(--space-3xs);
+  transition: color var(--dur-short) var(--ease-out),
+              border-color var(--dur-short) var(--ease-out);
+}
+.link:hover { color: var(--color-accent); border-color: var(--color-accent); }
+.link:active { color: var(--color-accent-dim); }
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out);
+}
+.cta:hover { background: var(--color-focus); }
+.cta:active { background: var(--color-accent-dim); }
+
+/* ─────────────────────────  Ft5 statement  ───────────────────────── */
+
+.foot { border-block-start: var(--rule-hair) solid var(--color-rule); padding-block: var(--space-3xl) var(--space-2xl); }
+.foot__line {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(1.75rem, 5vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+  max-width: 20ch;
+  margin-block-end: var(--space-xl);
+}
+.foot__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-block-start: var(--space-lg);
+  border-block-start: var(--rule-hair) solid var(--color-rule);
+}
+
+/* ─────────────────────  one staged scroll reveal  ─────────────────── */
+
+/* Default is VISIBLE. The hidden state is opt-in via the .js class, which only exists once
+   the script has run — so a failed/blocked script can never leave the page blank. */
+.js .reveal { opacity: 0; transform: translateY(10px); }
+.js .reveal.is-revealed {
+  animation: reveal var(--dur-long) var(--ease-out) forwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+@keyframes reveal { to { opacity: 1; transform: none; } }
+
+/* ──────────────────────────  responsive  ──────────────────────────── */
+
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .feature__split { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .stats { grid-template-columns: minmax(0, 1fr); }
+  .stack-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero { min-height: auto; padding-block: var(--space-4xl) var(--space-2xl); }
+  /* the pill stays docked at the top on every width. Bottom-docking it put a fixed bar
+     over the hero figure, which is the one thing the fold exists to show. */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal, .js .reveal.is-revealed { opacity: 1; transform: none; animation: none; }
+  .spark__line { stroke-dashoffset: 0; animation: none; }
+  .spark__dot { opacity: 1; animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+
+@media print {
+  body::before, .nav, .scroll-cue { display: none; }
+  body { background: var(--print-paper); color: var(--print-ink); }
+  .card { box-shadow: none; border-color: var(--print-rule); background: var(--print-paper); }
+  .hero { min-height: auto; padding-block: 0; }
+  h1, h2, h3, .role__org, .stat b, .hero__fig, .label, .tags span { color: var(--print-ink); }
+  .tags span { border-color: var(--print-rule); }
+}

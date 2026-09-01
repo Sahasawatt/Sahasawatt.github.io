@@ -1,0 +1,105 @@
+/* Hallmark · tokens · genre: atmospheric · theme: custom "dark-luxury"
+ *
+ * Palette derived from https://styleshift.design/styles/dark-luxury — values re-fetched and
+ * confirmed by hand, not taken from an agent's summary. Source hexes are recorded beside each
+ * token so the derivation stays auditable; the tokens themselves are OKLCH per the colour rules.
+ *
+ *   base #0a0a0a · elevated #141414 · heading #f0f0f0 · body #b0b0b0 · metadata #707070
+ *   "Pure black is a void. Near-black is a room."
+ *   Source rule: exactly ONE warm accent. No cool tones. No secondary accent.
+ */
+
+:root {
+  /* ---- ground · near-black, warm-tinted, never #000 ---- */
+  --color-paper:      oklch(14%   0.006 70);   /* ~#0a0a0a */
+  --color-paper-2:    oklch(19%   0.007 70);   /* ~#141414 · elevated surface */
+  --color-paper-3:    oklch(24%   0.008 70);   /* one step further forward */
+
+  /* ---- text, stepped by luminosity rather than by hue ---- */
+  --color-ink:        oklch(95%   0.004 70);   /* ~#f0f0f0 · headings */
+  --color-body:       oklch(78%   0.006 70);   /* ~#b0b0b0 · body */
+  --color-muted:      oklch(62%   0.007 70);   /* source says #707070; lifted for AA margin */
+  --color-rule:       oklch(30%   0.008 70);   /* dividers, kept near 12% alpha visually */
+
+  /* ---- the single warm accent ---- */
+  --color-accent:     oklch(80%   0.145 78);   /* amber-gold */
+  --color-accent-dim: oklch(62%   0.115 78);
+  --color-accent-ink: oklch(16%   0.020 70);   /* text ON an accent fill */
+  --color-focus:      oklch(85%   0.150 85);
+
+  /* ---- bloom · the atmospheric ground, two warm radials ---- */
+  --bloom-a: oklch(62% 0.15 62 / 0.20);
+  --bloom-b: oklch(58% 0.13 30 / 0.14);
+
+  /* ---- type ---- */
+  --font-display:  "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-body:     "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier:  "JetBrains Mono", ui-monospace, monospace;   /* figures + data labels only */
+
+  /* light display weight is the luxury register, and light-on-dark renders optically heavier */
+  --display-weight: 300;
+  --body-weight:    400;
+  --tracking-display: -0.035em;
+  --tracking-label:   0.14em;
+
+  --text-xs:      0.75rem;
+  --text-sm:      0.875rem;
+  --text-base:    1.0625rem;   /* 17px — dark grounds want a touch more */
+  --text-md:      1.25rem;
+  --text-lg:      1.5rem;
+  --text-xl:      1.9531rem;
+  --text-2xl:     2.4414rem;
+  --text-3xl:     3.0518rem;
+  --text-marquee: clamp(3rem, 11.5vw, 11rem);  /* the fold-filling name */
+  --text-display: clamp(2rem, 4.6vw, 3.75rem);
+  --text-figure:  clamp(3.25rem, 9vw, 8rem);
+
+  /* ---- 4pt spacing scale ---- */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 5rem;    /* the source's stated gap between major sections */
+  --space-4xl: 9rem;
+
+  /* ---- shell ---- */
+  /* 1180 left the hero's two columns at 510px each, which put the lede at 38ch —
+     under the 45ch floor. The shell is what was squeezing the text, not max-width. */
+  --shell:       1320px;
+  --page-gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* ---- surface · elevated cards, not hairlines-on-paper ---- */
+  --radius:        4px;         /* the source's 2-4px */
+  --radius-lg:     10px;
+  --rule-hair:     1px;
+  --lift:          0 1px 0 oklch(100% 0 0 / 0.04) inset,
+                   0 18px 40px -24px oklch(0% 0 0 / 0.9);
+  --lift-glow:     0 1px 0 oklch(100% 0 0 / 0.06) inset,
+                   0 20px 50px -22px oklch(62% 0.15 62 / 0.35);
+
+  /* ---- motion ---- */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro:   120ms;
+  --dur-short:   220ms;
+  --dur-long:    520ms;
+
+  /* ---- print · the only light surface in the system, tinted not pure ---- */
+  --print-paper: oklch(99% 0.002 70);
+  --print-ink:   oklch(18% 0.008 70);
+  --print-rule:  oklch(82% 0.005 70);
+
+  /* ---- z scale ---- */
+  --z-base:     1;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-tooltip:  600;
+}
